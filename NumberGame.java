@@ -20,10 +20,23 @@ public class NumberGame{
         int num = randomNumber();
         int attemps = 10;
 
-        System.out.print("Guess: ");
+        System.out.print("Guess || Enter -1 to Exit: ");
         int userInput = scan.nextInt();
 
         while(true){
+
+            if(userInput == -1){
+                System.out.println("Exited");
+                return;
+            }
+
+            if(userInput == -2){
+                System.out.println("\n\n\n\n");
+                System.out.println("New Game");
+                startGame();
+                return;
+            }
+
             if(userInput == num || attemps == 0){
                 check(attemps, num);
                 return;
